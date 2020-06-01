@@ -1,0 +1,2 @@
+# timelapsy
+Simple python timelapses
