@@ -11,6 +11,7 @@ It is written in python and uses opencv to capture frames.
 ## Requirements
 
 * You will need a phone 📱 running [Ip Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en)
+  * You can also use a webcam 📷 or other supported streams (RTSP, HTTP) Ip camera, see: [OpenCV](https://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture-videocapture)
 * Python 3+ installed (Tested with 3.7) 
 
 ## Usage
