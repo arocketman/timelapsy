@@ -16,4 +16,14 @@ It is written in python and uses opencv to capture frames.
 
 ## Usage
 
-todo
+        Usage: app.py [OPTIONS]
+        
+        Options:
+          --address TEXT            Address of stream, can also be webcam device id
+                                    (e.g: http://192.168.1.166:8080/video) for ip
+                                    camera
+        
+          --save-frequency INTEGER  Saves frame/image every X seconds
+          --save-path TEXT          Directory where to store files
+          --help                    Show this message and exit.
+

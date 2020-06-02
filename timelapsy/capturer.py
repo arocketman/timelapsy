@@ -7,9 +7,9 @@ import time
 class Capturer:
     def __init__(
         self,
-        address: str = "http://192.168.1.166:8080/video",
-        save_frequency: int = 600,
-        save_path: str = "images",
+        address: str,
+        save_frequency: int,
+        save_path: str,
     ):
         """
         Capturer class is responsible for capturing frames from a provided address
@@ -17,13 +17,16 @@ class Capturer:
         :param save_frequency: Frequency (in seconds) to save image to disk
         :param save_path: Where to store saved images
         """
-        self._capture = cv2.VideoCapture(address)
+        self._capture = cv2.VideoCapture(str(address))
         self._last_capture = save_frequency
 
-        self.save_path = save_path
         self.save_frequency = max(
             save_frequency, 1
         )  # If less than 1second just record a video
+
+        self.save_path = save_path
+        if not os.path.exists(save_path):
+            os.mkdir(save_path)
 
     def capture(self):
         """
@@ -50,7 +53,7 @@ class Capturer:
         cv2.imwrite(
             os.path.join(
                 self.save_path,
-                time.strftime("%b-%d-%Y_%H%M%S", time.localtime()) + ".jpg",
+                time.strftime("%m-%d-%Y_%H%M%S", time.localtime()) + ".jpg",
             ),
             frame,
         )
